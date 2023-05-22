@@ -1,24 +1,89 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-  <title>Elo Ratings</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <h1>Elo Ratings</h1>
+<title>Tom Murphy 7's Invincible Web Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name=keywords content="tom 7, tom murphy, tom murphy vii, cs computer science graduate student CMU, programming languages, pittsburgh, pa, sml, type theory, design, killer robots">
+<meta name=description content="Tom 7's serious web page for graduate school. (But it has fun stuff nonetheless.)">
+<link rel=stylesheet type="text/css" href="tom7.css" title="tom7">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <table id="eloTable">
-    <thead>
-      <tr>
-        <th>Team</th>
-        <th>Elo</th>
-      </tr>
-    </thead>
-    <tbody id="eloBody">
-      <!-- Elo ratings data will be dynamically added here -->
-    </tbody>
-  </table>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<script language=JavaScript>
+<!--
+function randto(n) {
+    return Math.round(Math.random() * n) % n;
+}
+// some useless attributes of Tom 7
+// If you read through these, reloading will never be
+// as much fun again!
+var numattrs = 66;
+var attr=new Array(numattrs);
+attr[0]="<b>Alignment</b>: Chaotic Good";
+attr[1]="<b>Temperament</b>: NF/INFP ('healer')";
+attr[2]="<b>Favorite ASCII character</b>: 0x2A '*'";
+attr[3]="<b>Favorite SML keyword</b>: <code>datatype</code>";
+attr[4]="<b>Favorite Ninja Turtle</b>: Donatello";
+attr[5]="<b>Favorite Abstract Expressionist</b>: Paul Klee";
+attr[6]="<b>Favorite Simple Machine</b>: Inclined Plane";
+attr[7]="<b>Favorite Pok&eacute;mon</b>: Missingno.";
+attr[8]="<b>Favorite NES Game</b>: Bionic Commando";
+attr[9]="<b>Favorite Set</b>: Empty";
+attr[10]="<b>Favorite Combinator</b>: <code>\\f.(\\x.f(xx))\\x.f(xx)</code>";
+attr[11]="<b>Favorite Color</b>: 477 nm";
+attr[12]="<b>Favorite Color Model</b>: H/S/B";
+attr[13]="<b>Favorite Connective</b>: &sup;";
+attr[14]="<b>Favorite MacGyver Ep</b>: 053 'Hell Week'";
+attr[15]="<b>Favorite Console Font</b>: FixedSys";
+attr[16]="<b>Favorite Isomorphism</b>: Curry-Howard";
+attr[17]="<b>Favorite Mega Man Stage</b>: Magnet Man (MM3)";
+attr[18]="<b>Favorite Knot</b>: Bowline hitch";
+attr[19]="<b>Favorite Lanthanide</b>: 66 Dy (Dysprosium)";
+attr[20]="<b>Favorite Synthetic Element</b>: 111 Uuu (Unununium)";
+attr[21]="<b>Favorite Chord</b>: x32033";
+attr[22]="<b>Favorite Alt. Tuning</b>: EADGAE";
+attr[23]="<b>Favorite Stream Cipher</b>: RC4";
+attr[24]="<b>Favorite Waveform</b>: Sawtooth";
+attr[25]="<b>Favorite Basic Spice</b>: Cumin";
+attr[26]="<b>Favorite Bean</b>: Garbanzo (Chick Pea)";
+attr[27]="<b>Favorite Gatorade Flavor</b>: Yellow";
+attr[28]="<b>Favorite Foosball Shot</b>: Long Push Shot";
+attr[29]="<b>Favorite Vowel Sound</b>: IPA 'u' (ie, b<b>oo</b>t)";
+attr[30]="<b>Favorite Beer</b>: Samuel Smith Oatmeal Stout";
+attr[31]="<b>Favorite Amino Acid</b>: Phenylalanine";
+attr[32]="<b>Favorite Cereal</b>: Quaker 100% Natural";
+attr[33]="<b>Favorite Partial Capo Configuration</b>: 4 --====";
+attr[34]="<b>Favorite Band</b>: Guided By Voices";
+attr[35]="<b>Favorite Street Fighter III Alpha Character</b>: Sakura";
+attr[36]="<b>Favorite Beatles Album</b>: Revolver";
+attr[37]="<b>Favorite Nontrivial Power of 2</b>: 32768";
+attr[38]="<b>Favorite Playstation Game</b>: Castlevania: SOTN";
+attr[39]="<b>Favorite Top Level Domain</b>: .org";
+attr[40]="<b>Favorite Quake III Level</b>: q3dm7";
+attr[41]="<b>Favorite Super Smash Bros. Melee Character</b>: Samus";
+attr[42]="<b>Favorite Editor</b>: GNU Emacs";
+attr[43]="<b>Favorite SML Compiler</b>: mlton";
+attr[44]="<b>Favorite Mitochondrial Protein</b>: MSFLPSFILS DESKERISKI LTLTHNVAHY GWIPFVLYLG WAHTSNRPNF LNLLSPLPSV";
+attr[45]="<b>Eye color</b>: Blue";
+attr[46]="<b>Corrective lenses</b>: -0.75, -1.0";
+attr[47]="<b>Source of calories</b>: Complex carbohydrates";
+attr[48]="<b>Erd&ouml;s Number</b>: 4";
+attr[49]="<b>Mathematical Philosophy</b>: ultrafinitism";
+attr[50]="<b>Number of Dead Foosball Player Heads on my Monitor</b>: 14";
+attr[51]="<b>Number of Albums Recorded since 1999</b>: 22";
+attr[52]="<b>Favorite proof checker</b>: Twelf";
+attr[53]="<b>Height</b>: 5 ft. 3 in.";
+attr[54]="<b>Favorite Pinball Machine</b>: Rocky and Bullwinkle";
+attr[55]="<b>Favorite emacs function</b>: <code>save-excursion</code>";
+attr[56]="<b>Scout rank</b>: First Class; Troop 610, Hamden, CT";
+attr[57]="<b>Favorite Quake deathmatch level</b>: <tt>start</tt>";
+attr[58]="<b>Favorite sneaker</b>: New Balance 991";
+attr[59]="<b>Shoe size</b>: 7&frac12; 4E";
+attr[60]="<b>Favorite literary genre</b>: hysterical realism";
+attr[61]="<b>Favorite Counter-Strike tackle</b>: b82b14b7";
+attr[62]="<b>Favorite Q3F class</b>: sniper";
+attr[63]="<b>Random fact #1</b>: has official RIAA engraved platinum record for work on Weird Al Yankovic's &quot;Running with Scissors&quot;";
+attr[64]="<b>Blood type</b>: O+";
+attr[65]="<b>Favorite DOOM music</b>: <tt>e1m1.mid</tt>";
+// -->
+</script>
